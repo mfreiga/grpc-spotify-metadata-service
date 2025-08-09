@@ -1,0 +1,37 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package org.spotify.grpc;
+
+service MetadataService {
+  rpc getTrackMetadata(EntitiesRequest) returns (Tracks) {}
+  rpc getAlbumMetadata (EntitiesRequest) returns (Albums){}
+}
+
+message EntitiesRequest {
+  repeated uint32 id = 1;
+}
+
+message Track {
+  uint64 id = 1;
+  string name = 2;
+  string album = 3;
+  string artist = 4;
+  uint32 duration = 5;
+}
+
+message Tracks {
+  repeated Track track = 1;
+}
+
+// TODO: Add protobuf definition for "Album" and "Albums"
+message Album {
+  uint64 id = 1;
+  string name = 2;
+  string artist = 3;
+  repeated uint32 tracks = 4;
+}
+
+
+message Albums{
+  repeated Album album = 1;
+}
