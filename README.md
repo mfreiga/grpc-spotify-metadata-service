@@ -39,11 +39,7 @@ This project provides a gRPC-based metadata service for Spotify albums, implemen
 ```
 
 ### Run the Server
-
-```sh
-./gradlew run
-```
-Or run the main class directly:
+run the main class directly:
 ```sh
 java -cp build/libs/<your-jar>.jar org.spotify.server.MetadataServer
 ```
